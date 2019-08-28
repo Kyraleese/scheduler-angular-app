@@ -1,0 +1,38 @@
+table {
+  padding: 2em;
+}
+
+table.schedule {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table.schedule td, table.schedule th {
+  width: 25%;
+  border-bottom: 1px solid #000000;
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+
+table.schedule td:last-child, table.schedule th:last-child {
+  border-right: 1px solid #000000;
+}
+
+table.schedule td:first-child, table.schedule th:first-child {
+  border-left: 1px solid #000000;
+}
+
+table.schedule th {
+  background-color: #f2f2f2;
+  border-top: 1px solid #000000;
+}
+
+caption {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+hr {
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
