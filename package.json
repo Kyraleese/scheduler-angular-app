@@ -1,7 +1,7 @@
 {
   "engines": {
     "node": "10.9.0",
-    "npm": "5.6.0"
+    "npm": "6.2.0"
   },
   "name": "schedule-app",
   "version": "0.0.0",
