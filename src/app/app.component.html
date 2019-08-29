@@ -1,418 +1,1266 @@
+<p> Please note, this is just one parent's interpretation of the "How to read your schedule".  It may not be accurate for your child, and for that I do apologize.  Please feel free to message me on FB and I'll do what I can to fix it up if you'd like.  I'm pretty sure everything works properly if your child has their enrichment in period 1 or 5, as I had samples for those.  I had to guess based on the other two what the pattern would be for how class schedule was communicated for those children with enrichment in period 3.  And of course, the order of the core classes, per the blue sheet, won't be known until your child's first few days of school, when their teacher team will go through that with them.</p>
+
+<h3>It should go without saying that this is NOT OFFICIAL -- Again, this is one parent making a thing to make organizing the schedule simpler, and she thought she'd share what she came up with.  Please don't call the school if this isn't right.  I am not an employee nor a board member for the district.  I'm just a software developer mom who saw an opportunity to simplify things and thought she'd take a stab at it.</h3>
+
+<p> My child has their enrichment classes in 
+<select [(ngModel)]="period" id="periodSelector" class="form-control">
+  <option [value]="9">Please Pick One To Continue</option>
+  <option [value]="1">1st Period</option>
+  <option [value]="3">3rd Period</option>
+  <option [value]="5">5th Period</option>
+</select>
+</p>
+
 <p> My child has Band/Orchestra for S1: <input type="checkbox" [(ngModel)]="s1" /> </p>
 <p> My child has Band/Orchestra for S2: <input type="checkbox" [(ngModel)]="s2" /> </p>
 
+<div [hidden]="period != 5">
+  <table id="data">
+    <thead>
+      <tr>
+        <th>Term</th>
+        <th>Course #</th>
+        <th>Course Name</th>
+        <th>Teacher</th>
+        <th>Room</th>
+        <th>Period</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>19-20</td>
+        <td>Not Used</td>
+        <td><input #e5_core1_name (keyup)="0"></td>
+        <td><input #e5_core1_teacher (keyup)="0"></td>
+        <td><input #e5_core1_room (keyup)="0"></td>
+        <td>Student to find out first week</td>
+      </tr>
+      <tr>
+        <td>19-20</td>
+        <td>Not Used</td>
+        <td><input #e5_core2_name (keyup)="0"></td>
+        <td><input #e5_core2_teacher (keyup)="0"></td>
+        <td><input #e5_core2_room (keyup)="0"></td>
+        <td>Student to find out first week</td>
+      </tr>
+      <tr>
+        <td>Q1</td>
+        <td>Not Used</td>
+        <td><input #e5_quarter_1_5_name (keyup)="0"></td>
+        <td><input #e5_quarter_1_5_teacher (keyup)="0"></td>
+        <td><input #e5_quarter_1_5_room (keyup)="0"></td>
+        <td>5(MW-F)</td>
+      </tr>
+      <tr>
+        <td>Q2</td>
+        <td>Not Used</td>
+        <td><input #e5_quarter_2_5_name (keyup)="0"></td>
+        <td><input #e5_quarter_2_5_teacher (keyup)="0"></td>
+        <td><input #e5_quarter_2_5_room (keyup)="0"></td>
+        <td>5(MW-F)</td>
+      </tr>
+      <tr>
+        <td>Q3</td>
+        <td>Not Used</td>
+        <td><input #e5_quarter_3_5_name (keyup)="0"></td>
+        <td><input #e5_quarter_3_5_teacher (keyup)="0"></td>
+        <td><input #e5_quarter_3_5_room (keyup)="0"></td>
+        <td>5(MW-F)</td>
+      </tr>
+      <tr>
+        <td>Q4</td>
+        <td>Not Used</td>
+        <td><input #e5_quarter_4_5_name (keyup)="0"></td>
+        <td><input #e5_quarter_4_5_teacher (keyup)="0"></td>
+        <td><input #e5_quarter_4_5_room (keyup)="0"></td>
+        <td>5(MW-F)</td>
+      </tr>
+      <tr [hidden]="!s1">
+        <td>S1</td>
+        <td>Not Used</td>
+        <td><input #e5_semester_1_name (keyup)="0"></td>
+        <td><input #e5_semester_1_teacher (keyup)="0"></td>
+        <td><input #e5_semester_1_room (keyup)="0"></td>
+        <td>6(MW-F)</td>
+      </tr>
+      <tr [hidden]="s1">
+        <td>Q1</td>
+        <td>Not Used</td>
+        <td><input #e5_quarter_1_6_name (keyup)="0"></td>
+        <td><input #e5_quarter_1_6_teacher (keyup)="0"></td>
+        <td><input #e5_quarter_1_6_room (keyup)="0"></td>
+        <td>6(MW-F)</td>
+      </tr>
+      <tr [hidden]="s1">
+        <td>Q2</td>
+        <td>Not Used</td>
+        <td><input #e5_quarter_2_6_name (keyup)="0"></td>
+        <td><input #e5_quarter_2_6_teacher (keyup)="0"></td>
+        <td><input #e5_quarter_2_6_room (keyup)="0"></td>
+        <td>6(MW-F)</td>
+      </tr>
+       <tr>
+        <td>Q3</td>
+        <td>Not Used</td>
+        <td><input #e5_quarter_3_6_name (keyup)="0"></td>
+        <td><input #e5_quarter_3_6_teacher (keyup)="0"></td>
+        <td><input #e5_quarter_3_6_room (keyup)="0"></td>
+        <td>6(MW-F)</td>
+      </tr>
+      <tr>
+        <td>Q4</td>
+        <td>Not Used</td>
+        <td><input #e5_quarter_4_6_name (keyup)="0"></td>
+        <td><input #e5_quarter_4_6_teacher (keyup)="0"></td>
+        <td><input #e5_quarter_4_6_room (keyup)="0"></td>
+        <td>6(MW-F)</td>
+      </tr>
+      <tr>
+        <td>Q1</td>
+        <td>Not Used</td>
+        <td><input #e5_quarter_1_7_name (keyup)="0"></td>
+        <td><input #e5_quarter_1_7_teacher (keyup)="0"></td>
+        <td><input #e5_quarter_1_7_room (keyup)="0"></td>
+        <td>7(MW-F)</td>
+      </tr>
+      <tr>
+        <td>Q2</td>
+        <td>Not Used</td>
+        <td><input #e5_quarter_2_7_name (keyup)="0"></td>
+        <td><input #e5_quarter_2_7_teacher (keyup)="0"></td>
+        <td><input #e5_quarter_2_7_room (keyup)="0"></td>
+        <td>7(MW-F)</td>
+      </tr>
+      <tr [hidden]="!s2">
+        <td>S2</td>
+        <td>Not Used</td>
+        <td><input #e5_semester_2_name (keyup)="0"></td>
+        <td><input #e5_semester_2_teacher (keyup)="0"></td>
+        <td><input #e5_semester_2_room (keyup)="0"></td>
+        <td>7(MW-F)</td>
+      </tr>
+      <tr [hidden]="s2">
+        <td>Q3</td>
+        <td>Not Used</td>
+        <td><input #e5_quarter_3_7_name (keyup)="0"></td>
+        <td><input #e5_quarter_3_7_teacher (keyup)="0"></td>
+        <td><input #e5_quarter_3_7_room (keyup)="0"></td>
+        <td>7(MW-F)</td>
+      </tr>
+      <tr [hidden]="s2">
+        <td>Q4</td>
+        <td>Not Used</td>
+        <td><input #e5_quarter_4_7_name (keyup)="0"></td>
+        <td><input #e5_quarter_4_7_teacher (keyup)="0"></td>
+        <td><input #e5_quarter_4_7_room (keyup)="0"></td>
+        <td>7(MW-F)</td>
+      </tr>
+      <tr>
+        <td>19-20</td>
+        <td>Not Used</td>
+        <td><input #e5_core3_name (keyup)="0"></td>
+        <td><input #e5_core3_teacher (keyup)="0"></td>
+        <td><input #e5_core3_room (keyup)="0"></td>
+        <td>Student to find out first week</td>
+      </tr>
+      <tr>
+        <td>19-20</td>
+        <td>Not Used</td>
+        <td><input #e5_core4_name (keyup)="0"></td>
+        <td><input #e5_core4_teacher (keyup)="0"></td>
+        <td><input #e5_core4_room (keyup)="0"></td>
+        <td>Student to find out first week</td>
+      </tr>
+    </tbody>  
+  </table>
 
-<table id="data">
-  <thead>
-    <tr>
-      <th>Term</th>
-      <th>Course #</th>
-      <th>Course Name</th>
-      <th>Teacher</th>
-      <th>Room</th>
-      <th>Period</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>19-20</td>
-      <td>Not Used</td>
-      <td><input #core_1_name (keyup)="0"></td>
-      <td><input #core_1_teacher (keyup)="0"></td>
-      <td><input #core_1_room (keyup)="0"></td>
-      <td>Student to find out first week</td>
-    </tr>
-    <tr>
-      <td>19-20</td>
-      <td>Not Used</td>
-      <td><input #core_2_name (keyup)="0"></td>
-      <td><input #core_2_teacher (keyup)="0"></td>
-      <td><input #core_2_room (keyup)="0"></td>
-      <td>Student to find out first week</td>
-    </tr>
-    <tr>
-      <td>Q1</td>
-      <td>Not Used</td>
-      <td><input #quarter_1_5_name (keyup)="0"></td>
-      <td><input #quarter_1_5_teacher (keyup)="0"></td>
-      <td><input #quarter_1_5_room (keyup)="0"></td>
-      <td>5(MW-F)</td>
-    </tr>
-    <tr>
-      <td>Q2</td>
-      <td>Not Used</td>
-      <td><input #quarter_2_5_name (keyup)="0"></td>
-      <td><input #quarter_2_5_teacher (keyup)="0"></td>
-      <td><input #quarter_2_5_room (keyup)="0"></td>
-      <td>5(MW-F)</td>
-    </tr>
-    <tr>
-      <td>Q3</td>
-      <td>Not Used</td>
-      <td><input #quarter_3_5_name (keyup)="0"></td>
-      <td><input #quarter_3_5_teacher (keyup)="0"></td>
-      <td><input #quarter_3_5_room (keyup)="0"></td>
-      <td>5(MW-F)</td>
-    </tr>
-    <tr>
-      <td>Q4</td>
-      <td>Not Used</td>
-      <td><input #quarter_4_5_name (keyup)="0"></td>
-      <td><input #quarter_4_5_teacher (keyup)="0"></td>
-      <td><input #quarter_4_5_room (keyup)="0"></td>
-      <td>5(MW-F)</td>
-    </tr>
-    <tr [hidden]="!s1">
-      <td>S1</td>
-      <td>Not Used</td>
-      <td><input #semester_1_name (keyup)="0"></td>
-      <td><input #semester_1_teacher (keyup)="0"></td>
-      <td><input #semester_1_room (keyup)="0"></td>
-      <td>6(MW-F)</td>
-    </tr>
-    <tr [hidden]="s1">
-      <td>Q1</td>
-      <td>Not Used</td>
-      <td><input #quarter_1_6_name (keyup)="0"></td>
-      <td><input #quarter_1_6_teacher (keyup)="0"></td>
-      <td><input #quarter_1_6_room (keyup)="0"></td>
-      <td>6(MW-F)</td>
-    </tr>
-    <tr [hidden]="s1">
-      <td>Q2</td>
-      <td>Not Used</td>
-      <td><input #quarter_2_6_name (keyup)="0"></td>
-      <td><input #quarter_2_6_teacher (keyup)="0"></td>
-      <td><input #quarter_2_6_room (keyup)="0"></td>
-      <td>6(MW-F)</td>
-    </tr>
-     <tr>
-      <td>Q3</td>
-      <td>Not Used</td>
-      <td><input #quarter_3_6_name (keyup)="0"></td>
-      <td><input #quarter_3_6_teacher (keyup)="0"></td>
-      <td><input #quarter_3_6_room (keyup)="0"></td>
-      <td>6(MW-F)</td>
-    </tr>
-    <tr>
-      <td>Q4</td>
-      <td>Not Used</td>
-      <td><input #quarter_4_6_name (keyup)="0"></td>
-      <td><input #quarter_4_6_teacher (keyup)="0"></td>
-      <td><input #quarter_4_6_room (keyup)="0"></td>
-      <td>6(MW-F)</td>
-    </tr>
-    <tr>
-      <td>Q1</td>
-      <td>Not Used</td>
-      <td><input #quarter_1_7_name (keyup)="0"></td>
-      <td><input #quarter_1_7_teacher (keyup)="0"></td>
-      <td><input #quarter_1_7_room (keyup)="0"></td>
-      <td>7(MW-F)</td>
-    </tr>
-    <tr>
-      <td>Q2</td>
-      <td>Not Used</td>
-      <td><input #quarter_2_7_name (keyup)="0"></td>
-      <td><input #quarter_2_7_teacher (keyup)="0"></td>
-      <td><input #quarter_2_7_room (keyup)="0"></td>
-      <td>7(MW-F)</td>
-    </tr>
-    <tr [hidden]="!s2">
-      <td>S2</td>
-      <td>Not Used</td>
-      <td><input #semester_2_name (keyup)="0"></td>
-      <td><input #semester_2_teacher (keyup)="0"></td>
-      <td><input #semester_2_room (keyup)="0"></td>
-      <td>7(MW-F)</td>
-    </tr>
-    <tr [hidden]="s2">
-      <td>Q3</td>
-      <td>Not Used</td>
-      <td><input #quarter_3_7_name (keyup)="0"></td>
-      <td><input #quarter_3_7_teacher (keyup)="0"></td>
-      <td><input #quarter_3_7_room (keyup)="0"></td>
-      <td>7(MW-F)</td>
-    </tr>
-    <tr [hidden]="s2">
-      <td>Q4</td>
-      <td>Not Used</td>
-      <td><input #quarter_4_7_name (keyup)="0"></td>
-      <td><input #quarter_4_7_teacher (keyup)="0"></td>
-      <td><input #quarter_4_7_room (keyup)="0"></td>
-      <td>7(MW-F)</td>
-    </tr>
-    <tr>
-      <td>19-20</td>
-      <td>Not Used</td>
-      <td><input #core_3_name (keyup)="0"></td>
-      <td><input #core_3_teacher (keyup)="0"></td>
-      <td><input #core_3_room (keyup)="0"></td>
-      <td>Student to find out first week</td>
-    </tr>
-    <tr>
-      <td>19-20</td>
-      <td>Not Used</td>
-      <td><input #core_4_name (keyup)="0"></td>
-      <td><input #core_4_teacher (keyup)="0"></td>
-      <td><input #core_4_room (keyup)="0"></td>
-      <td>Student to find out first week</td>
-    </tr>
-  </tbody>  
-</table>
+  <hr>
 
-<hr>
+  <table class="schedule" id="first-quarter">
+    <caption>First Quarter</caption>
+    <thead>
+      <tr>
+        <th>Course Name</th>
+        <th>Teacher</th>
+        <th>Room</th>
+        <th>Period</th>
+      <tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p>{{e5_core1_name.value}}</p></td>
+        <td><p>{{e5_core1_teacher.value}}</p></td>
+        <td><p>{{e5_core1_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e5_core2_name.value}}</p></td>
+        <td><p>{{e5_core2_teacher.value}}</p></td>
+        <td><p>{{e5_core2_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e5_core3_name.value}}</p></td>
+        <td><p>{{e5_core3_teacher.value}}</p></td>
+        <td><p>{{e5_core3_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e5_core4_name.value}}</p></td>
+        <td><p>{{e5_core4_teacher.value}}</p></td>
+        <td><p>{{e5_core4_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e5_quarter_1_5_name.value}}</p></td>
+        <td><p>{{e5_quarter_1_5_teacher.value}}</p></td>
+        <td><p>{{e5_quarter_1_5_room.value}}</p></td>
+        <td>Period 5</td>
+      </tr>
+      <tr [hidden]="!s1">
+        <td><p>{{e5_semester_1_name.value}}</p></td>
+        <td><p>{{e5_semester_1_teacher.value}}</p></td>
+        <td><p>{{e5_semester_1_room.value}}</p></td>
+        <td>Period 6</td>
+      </tr>
+      <tr [hidden]="s1">
+        <td><p>{{e5_quarter_1_6_name.value}}</p></td>
+        <td><p>{{e5_quarter_1_6_teacher.value}}</p></td>
+        <td><p>{{e5_quarter_1_6_room.value}}</p></td>
+        <td>Period 6</td>
+      </tr>
+      <tr>
+        <td><p>{{e5_quarter_1_7_name.value}}</p></td>
+        <td><p>{{e5_quarter_1_7_teacher.value}}</p></td>
+        <td><p>{{e5_quarter_1_7_room.value}}</p></td>
+        <td>Period 7</td>
+      </tr>
+    </tbody>
+  </table>
 
-<table class="schedule" id="first-quarter">
-  <caption>First Quarter</caption>
-  <thead>
-    <tr>
-      <th>Course Name</th>
-      <th>Teacher</th>
-      <th>Room</th>
-      <th>Period</th>
-    <tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><p>{{core_1_name.value}}</p></td>
-      <td><p>{{core_1_teacher.value}}</p></td>
-      <td><p>{{core_1_room.value}}</p></td>
-      <td>Student to find out first days of school</td>
-    </tr>
-    <tr>
-      <td><p>{{core_2_name.value}}</p></td>
-      <td><p>{{core_2_teacher.value}}</p></td>
-      <td><p>{{core_2_room.value}}</p></td>
-      <td>Student to find out first days of school</td>
-    </tr>
-    <tr>
-      <td><p>{{core_3_name.value}}</p></td>
-      <td><p>{{core_3_teacher.value}}</p></td>
-      <td><p>{{core_3_room.value}}</p></td>
-      <td>Student to find out first days of school</td>
-    </tr>
-    <tr>
-      <td><p>{{core_4_name.value}}</p></td>
-      <td><p>{{core_4_teacher.value}}</p></td>
-      <td><p>{{core_4_room.value}}</p></td>
-      <td>Student to find out first days of school</td>
-    </tr>
-    <tr>
-      <td><p>{{quarter_1_5_name.value}}</p></td>
-      <td><p>{{quarter_1_5_teacher.value}}</p></td>
-      <td><p>{{quarter_1_5_room.value}}</p></td>
-      <td>Period 5</td>
-    </tr>
-    <tr [hidden]="!s1">
-      <td><p>{{semester_1_name.value}}</p></td>
-      <td><p>{{semester_1_teacher.value}}</p></td>
-      <td><p>{{semester_1_room.value}}</p></td>
-      <td>Period 6</td>
-    </tr>
-    <tr [hidden]="s1">
-      <td><p>{{quarter_1_6_name.value}}</p></td>
-      <td><p>{{quarter_1_6_teacher.value}}</p></td>
-      <td><p>{{quarter_1_6_room.value}}</p></td>
-      <td>Period 6</td>
-    </tr>
-    <tr>
-      <td><p>{{quarter_1_7_name.value}}</p></td>
-      <td><p>{{quarter_1_7_teacher.value}}</p></td>
-      <td><p>{{quarter_1_7_room.value}}</p></td>
-      <td>Period 7</td>
-    </tr>
-  </tbody>
-</table>
+  <hr>
 
-<hr>
+  <table class="schedule" id="second-quarter">
+    <caption>Second Quarter</caption>
+    <thead>
+      <tr>
+        <th>Course Name</th>
+        <th>Teacher</th>
+        <th>Room</th>
+        <th>Period</th>
+      <tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p>{{e5_core1_name.value}}</p></td>
+        <td><p>{{e5_core1_teacher.value}}</p></td>
+        <td><p>{{e5_core1_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e5_core2_name.value}}</p></td>
+        <td><p>{{e5_core2_teacher.value}}</p></td>
+        <td><p>{{e5_core2_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e5_core3_name.value}}</p></td>
+        <td><p>{{e5_core3_teacher.value}}</p></td>
+        <td><p>{{e5_core3_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e5_core4_name.value}}</p></td>
+        <td><p>{{e5_core4_teacher.value}}</p></td>
+        <td><p>{{e5_core4_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e5_quarter_2_5_name.value}}</p></td>
+        <td><p>{{e5_quarter_2_5_teacher.value}}</p></td>
+        <td><p>{{e5_quarter_2_5_room.value}}</p></td>
+        <td>Period 5</td>
+      </tr>
+      <tr [hidden]="!s1">
+        <td><p>{{e5_semester_1_name.value}}</p></td>
+        <td><p>{{e5_semester_1_teacher.value}}</p></td>
+        <td><p>{{e5_semester_1_room.value}}</p></td>
+        <td>Period 6</td>
+      </tr>
+      <tr [hidden]="s1">
+        <td><p>{{e5_quarter_2_6_name.value}}</p></td>
+        <td><p>{{e5_quarter_2_6_teacher.value}}</p></td>
+        <td><p>{{e5_quarter_2_6_room.value}}</p></td>
+        <td>Period 6</td>
+      </tr>
+      <tr>
+        <td><p>{{e5_quarter_2_7_name.value}}</p></td>
+        <td><p>{{e5_quarter_2_7_teacher.value}}</p></td>
+        <td><p>{{e5_quarter_2_7_room.value}}</p></td>
+        <td>Period 7</td>
+      </tr>
+    </tbody>
+  </table>
 
-<table class="schedule" id="second-quarter">
-  <caption>Second Quarter</caption>
-  <thead>
-    <tr>
-      <th>Course Name</th>
-      <th>Teacher</th>
-      <th>Room</th>
-      <th>Period</th>
-    <tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><p>{{core_1_name.value}}</p></td>
-      <td><p>{{core_1_teacher.value}}</p></td>
-      <td><p>{{core_1_room.value}}</p></td>
-      <td>Student to find out first days of school</td>
-    </tr>
-    <tr>
-      <td><p>{{core_2_name.value}}</p></td>
-      <td><p>{{core_2_teacher.value}}</p></td>
-      <td><p>{{core_2_room.value}}</p></td>
-      <td>Student to find out first days of school</td>
-    </tr>
-    <tr>
-      <td><p>{{core_3_name.value}}</p></td>
-      <td><p>{{core_3_teacher.value}}</p></td>
-      <td><p>{{core_3_room.value}}</p></td>
-      <td>Student to find out first days of school</td>
-    </tr>
-    <tr>
-      <td><p>{{core_4_name.value}}</p></td>
-      <td><p>{{core_4_teacher.value}}</p></td>
-      <td><p>{{core_4_room.value}}</p></td>
-      <td>Student to find out first days of school</td>
-    </tr>
-    <tr>
-      <td><p>{{quarter_2_5_name.value}}</p></td>
-      <td><p>{{quarter_2_5_teacher.value}}</p></td>
-      <td><p>{{quarter_2_5_room.value}}</p></td>
-      <td>Period 5</td>
-    </tr>
-    <tr [hidden]="!s1">
-      <td><p>{{semester_1_name.value}}</p></td>
-      <td><p>{{semester_1_teacher.value}}</p></td>
-      <td><p>{{semester_1_room.value}}</p></td>
-      <td>Period 6</td>
-    </tr>
-    <tr [hidden]="s1">
-      <td><p>{{quarter_2_6_name.value}}</p></td>
-      <td><p>{{quarter_2_6_teacher.value}}</p></td>
-      <td><p>{{quarter_2_6_room.value}}</p></td>
-      <td>Period 6</td>
-    </tr>
-    <tr>
-      <td><p>{{quarter_2_7_name.value}}</p></td>
-      <td><p>{{quarter_2_7_teacher.value}}</p></td>
-      <td><p>{{quarter_2_7_room.value}}</p></td>
-      <td>Period 7</td>
-    </tr>
-  </tbody>
-</table>
+  <hr>
 
-<hr>
+  <table class="schedule" id="third-quarter">
+    <caption>Third Quarter</caption>
+    <thead>
+      <tr>
+        <th>Course Name</th>
+        <th>Teacher</th>
+        <th>Room</th>
+        <th>Period</th>
+      <tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p>{{e5_core1_name.value}}</p></td>
+        <td><p>{{e5_core1_teacher.value}}</p></td>
+        <td><p>{{e5_core1_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e5_core2_name.value}}</p></td>
+        <td><p>{{e5_core2_teacher.value}}</p></td>
+        <td><p>{{e5_core2_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e5_core3_name.value}}</p></td>
+        <td><p>{{e5_core3_teacher.value}}</p></td>
+        <td><p>{{e5_core3_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e5_core4_name.value}}</p></td>
+        <td><p>{{e5_core4_teacher.value}}</p></td>
+        <td><p>{{e5_core4_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e5_quarter_3_5_name.value}}</p></td>
+        <td><p>{{e5_quarter_3_5_teacher.value}}</p></td>
+        <td><p>{{e5_quarter_3_5_room.value}}</p></td>
+        <td>Period 5</td>
+      </tr>
+      <tr>
+        <td><p>{{e5_quarter_3_6_name.value}}</p></td>
+        <td><p>{{e5_quarter_3_6_teacher.value}}</p></td>
+        <td><p>{{e5_quarter_3_6_room.value}}</p></td>
+        <td>Period 6</td>
+      </tr>
+      <tr [hidden]="!s2">
+        <td><p>{{e5_semester_2_name.value}}</p></td>
+        <td><p>{{e5_semester_2_teacher.value}}</p></td>
+        <td><p>{{e5_semester_2_room.value}}</p></td>
+        <td>Period 7</td>
+      </tr>
+       <tr [hidden]="s2">
+        <td><p>{{e5_quarter_3_7_name.value}}</p></td>
+        <td><p>{{e5_quarter_3_7_teacher.value}}</p></td>
+        <td><p>{{e5_quarter_3_7_room.value}}</p></td>
+        <td>Period 7</td>
+      </tr>
+    </tbody>
+  </table>
 
-<table class="schedule" id="third-quarter">
-  <caption>Third Quarter</caption>
-  <thead>
-    <tr>
-      <th>Course Name</th>
-      <th>Teacher</th>
-      <th>Room</th>
-      <th>Period</th>
-    <tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><p>{{core_1_name.value}}</p></td>
-      <td><p>{{core_1_teacher.value}}</p></td>
-      <td><p>{{core_1_room.value}}</p></td>
-      <td>Student to find out first days of school</td>
-    </tr>
-    <tr>
-      <td><p>{{core_2_name.value}}</p></td>
-      <td><p>{{core_2_teacher.value}}</p></td>
-      <td><p>{{core_2_room.value}}</p></td>
-      <td>Student to find out first days of school</td>
-    </tr>
-    <tr>
-      <td><p>{{core_3_name.value}}</p></td>
-      <td><p>{{core_3_teacher.value}}</p></td>
-      <td><p>{{core_3_room.value}}</p></td>
-      <td>Student to find out first days of school</td>
-    </tr>
-    <tr>
-      <td><p>{{core_4_name.value}}</p></td>
-      <td><p>{{core_4_teacher.value}}</p></td>
-      <td><p>{{core_4_room.value}}</p></td>
-      <td>Student to find out first days of school</td>
-    </tr>
-    <tr>
-      <td><p>{{quarter_3_5_name.value}}</p></td>
-      <td><p>{{quarter_3_5_teacher.value}}</p></td>
-      <td><p>{{quarter_3_5_room.value}}</p></td>
-      <td>Period 5</td>
-    </tr>
-    <tr>
-      <td><p>{{quarter_3_6_name.value}}</p></td>
-      <td><p>{{quarter_3_6_teacher.value}}</p></td>
-      <td><p>{{quarter_3_6_room.value}}</p></td>
-      <td>Period 6</td>
-    </tr>
-    <tr [hidden]="!s2">
-      <td><p>{{semester_2_name.value}}</p></td>
-      <td><p>{{semester_2_teacher.value}}</p></td>
-      <td><p>{{semester_2_room.value}}</p></td>
-      <td>Period 7</td>
-    </tr>
-     <tr [hidden]="s2">
-      <td><p>{{quarter_3_7_name.value}}</p></td>
-      <td><p>{{quarter_3_7_teacher.value}}</p></td>
-      <td><p>{{quarter_3_7_room.value}}</p></td>
-      <td>Period 7</td>
-    </tr>
-  </tbody>
-</table>
+  <hr>
 
-<hr>
+  <table class="schedule" id="fourth-quarter">
+    <caption>Fourth Quarter</caption>
+    <thead>
+      <tr>
+        <th>Course Name</th>
+        <th>Teacher</th>
+        <th>Room</th>
+        <th>Period</th>
+      <tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p>{{e5_core1_name.value}}</p></td>
+        <td><p>{{e5_core1_teacher.value}}</p></td>
+        <td><p>{{e5_core1_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e5_core2_name.value}}</p></td>
+        <td><p>{{e5_core2_teacher.value}}</p></td>
+        <td><p>{{e5_core2_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e5_core3_name.value}}</p></td>
+        <td><p>{{e5_core3_teacher.value}}</p></td>
+        <td><p>{{e5_core3_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e5_core4_name.value}}</p></td>
+        <td><p>{{e5_core4_teacher.value}}</p></td>
+        <td><p>{{e5_core4_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e5_quarter_4_5_name.value}}</p></td>
+        <td><p>{{e5_quarter_4_5_teacher.value}}</p></td>
+        <td><p>{{e5_quarter_4_5_room.value}}</p></td>
+        <td>Period 5</td>
+      </tr>
+      <tr>
+        <td><p>{{e5_quarter_4_6_name.value}}</p></td>
+        <td><p>{{e5_quarter_4_6_teacher.value}}</p></td>
+        <td><p>{{e5_quarter_4_6_room.value}}</p></td>
+        <td>Period 6</td>
+      </tr>
+      <tr [hidden]="!s2">
+        <td><p>{{e5_semester_2_name.value}}</p></td>
+        <td><p>{{e5_semester_2_teacher.value}}</p></td>
+        <td><p>{{e5_semester_2_room.value}}</p></td>
+        <td>Period 7</td>
+      </tr>
+       <tr [hidden]="s2">
+        <td><p>{{e5_quarter_4_7_name.value}}</p></td>
+        <td><p>{{e5_quarter_4_7_teacher.value}}</p></td>
+        <td><p>{{e5_quarter_4_7_room.value}}</p></td>
+        <td>Period 7</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-<table class="schedule" id="fourth-quarter">
-  <caption>Fourth Quarter</caption>
-  <thead>
-    <tr>
-      <th>Course Name</th>
-      <th>Teacher</th>
-      <th>Room</th>
-      <th>Period</th>
-    <tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><p>{{core_1_name.value}}</p></td>
-      <td><p>{{core_1_teacher.value}}</p></td>
-      <td><p>{{core_1_room.value}}</p></td>
-      <td>Student to find out first days of school</td>
-    </tr>
-    <tr>
-      <td><p>{{core_2_name.value}}</p></td>
-      <td><p>{{core_2_teacher.value}}</p></td>
-      <td><p>{{core_2_room.value}}</p></td>
-      <td>Student to find out first days of school</td>
-    </tr>
-    <tr>
-      <td><p>{{core_3_name.value}}</p></td>
-      <td><p>{{core_3_teacher.value}}</p></td>
-      <td><p>{{core_3_room.value}}</p></td>
-      <td>Student to find out first days of school</td>
-    </tr>
-    <tr>
-      <td><p>{{core_4_name.value}}</p></td>
-      <td><p>{{core_4_teacher.value}}</p></td>
-      <td><p>{{core_4_room.value}}</p></td>
-      <td>Student to find out first days of school</td>
-    </tr>
-    <tr>
-      <td><p>{{quarter_4_5_name.value}}</p></td>
-      <td><p>{{quarter_4_5_teacher.value}}</p></td>
-      <td><p>{{quarter_4_5_room.value}}</p></td>
-      <td>Period 5</td>
-    </tr>
-    <tr>
-      <td><p>{{quarter_4_6_name.value}}</p></td>
-      <td><p>{{quarter_4_6_teacher.value}}</p></td>
-      <td><p>{{quarter_4_6_room.value}}</p></td>
-      <td>Period 6</td>
-    </tr>
-    <tr [hidden]="!s2">
-      <td><p>{{semester_2_name.value}}</p></td>
-      <td><p>{{semester_2_teacher.value}}</p></td>
-      <td><p>{{semester_2_room.value}}</p></td>
-      <td>Period 7</td>
-    </tr>
-     <tr [hidden]="s2">
-      <td><p>{{quarter_4_7_name.value}}</p></td>
-      <td><p>{{quarter_4_7_teacher.value}}</p></td>
-      <td><p>{{quarter_4_7_room.value}}</p></td>
-      <td>Period 7</td>
-    </tr>
-  </tbody>
-</table>
+<div [hidden]="period != 3">
+  <table id="data">
+    <thead>
+      <tr>
+        <th>Term</th>
+        <th>Course #</th>
+        <th>Course Name</th>
+        <th>Teacher</th>
+        <th>Room</th>
+        <th>Period</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>19-20</td>
+        <td>Not Used</td>
+        <td><input #e3_core1_name (keyup)="0"></td>
+        <td><input #e3_core1_teacher (keyup)="0"></td>
+        <td><input #e3_core1_room (keyup)="0"></td>
+        <td>Student to find out first week</td>
+      </tr>
+      <tr>
+        <td>19-20</td>
+        <td>Not Used</td>
+        <td><input #e3_core2_name (keyup)="0"></td>
+        <td><input #e3_core2_teacher (keyup)="0"></td>
+        <td><input #e3_core2_room (keyup)="0"></td>
+        <td>Student to find out first week</td>
+      </tr>
+      <tr>
+        <td>Q1</td>
+        <td>Not Used</td>
+        <td><input #e3_quarter_1_3_name (keyup)="0"></td>
+        <td><input #e3_quarter_1_3_teacher (keyup)="0"></td>
+        <td><input #e3_quarter_1_3_room (keyup)="0"></td>
+        <td>3(MW-F)</td>
+      </tr>
+      <tr>
+        <td>Q2</td>
+        <td>Not Used</td>
+        <td><input #e3_quarter_2_3_name (keyup)="0"></td>
+        <td><input #e3_quarter_2_3_teacher (keyup)="0"></td>
+        <td><input #e3_quarter_2_3_room (keyup)="0"></td>
+        <td>3(MW-F)</td>
+      </tr>
+      <tr>
+        <td>Q3</td>
+        <td>Not Used</td>
+        <td><input #e3_quarter_3_3_name (keyup)="0"></td>
+        <td><input #e3_quarter_3_3_teacher (keyup)="0"></td>
+        <td><input #e3_quarter_3_3_room (keyup)="0"></td>
+        <td>3(MW-F)</td>
+      </tr>
+      <tr>
+        <td>Q4</td>
+        <td>Not Used</td>
+        <td><input #e3_quarter_4_3_name (keyup)="0"></td>
+        <td><input #e3_quarter_4_3_teacher (keyup)="0"></td>
+        <td><input #e3_quarter_4_3_room (keyup)="0"></td>
+        <td>3(MW-F)</td>
+      </tr>
+      <tr [hidden]="!s1">
+        <td>S1</td>
+        <td>Not Used</td>
+        <td><input #e3_semester_1_name (keyup)="0"></td>
+        <td><input #e3_semester_1_teacher (keyup)="0"></td>
+        <td><input #e3_semester_1_room (keyup)="0"></td>
+        <td>6(MW-F)</td>
+      </tr>
+      <tr [hidden]="s1">
+        <td>Q1</td>
+        <td>Not Used</td>
+        <td><input #e3_quarter_1_6_name (keyup)="0"></td>
+        <td><input #e3_quarter_1_6_teacher (keyup)="0"></td>
+        <td><input #e3_quarter_1_6_room (keyup)="0"></td>
+        <td>6(MW-F)</td>
+      </tr>
+      <tr [hidden]="s1">
+        <td>Q2</td>
+        <td>Not Used</td>
+        <td><input #e3_quarter_2_6_name (keyup)="0"></td>
+        <td><input #e3_quarter_2_6_teacher (keyup)="0"></td>
+        <td><input #e3_quarter_2_6_room (keyup)="0"></td>
+        <td>6(MW-F)</td>
+      </tr>
+       <tr>
+        <td>Q3</td>
+        <td>Not Used</td>
+        <td><input #e3_quarter_3_6_name (keyup)="0"></td>
+        <td><input #e3_quarter_3_6_teacher (keyup)="0"></td>
+        <td><input #e3_quarter_3_6_room (keyup)="0"></td>
+        <td>6(MW-F)</td>
+      </tr>
+      <tr>
+        <td>Q4</td>
+        <td>Not Used</td>
+        <td><input #e3_quarter_4_6_name (keyup)="0"></td>
+        <td><input #e3_quarter_4_6_teacher (keyup)="0"></td>
+        <td><input #e3_quarter_4_6_room (keyup)="0"></td>
+        <td>6(MW-F)</td>
+      </tr>
+      <tr>
+        <td>Q1</td>
+        <td>Not Used</td>
+        <td><input #e3_quarter_1_7_name (keyup)="0"></td>
+        <td><input #e3_quarter_1_7_teacher (keyup)="0"></td>
+        <td><input #e3_quarter_1_7_room (keyup)="0"></td>
+        <td>7(MW-F)</td>
+      </tr>
+      <tr>
+        <td>Q2</td>
+        <td>Not Used</td>
+        <td><input #e3_quarter_2_7_name (keyup)="0"></td>
+        <td><input #e3_quarter_2_7_teacher (keyup)="0"></td>
+        <td><input #e3_quarter_2_7_room (keyup)="0"></td>
+        <td>7(MW-F)</td>
+      </tr>
+      <tr [hidden]="!s2">
+        <td>S2</td>
+        <td>Not Used</td>
+        <td><input #e3_semester_2_name (keyup)="0"></td>
+        <td><input #e3_semester_2_teacher (keyup)="0"></td>
+        <td><input #e3_semester_2_room (keyup)="0"></td>
+        <td>7(MW-F)</td>
+      </tr>
+      <tr [hidden]="s2">
+        <td>Q3</td>
+        <td>Not Used</td>
+        <td><input #e3_quarter_3_7_name (keyup)="0"></td>
+        <td><input #e3_quarter_3_7_teacher (keyup)="0"></td>
+        <td><input #e3_quarter_3_7_room (keyup)="0"></td>
+        <td>7(MW-F)</td>
+      </tr>
+      <tr [hidden]="s2">
+        <td>Q4</td>
+        <td>Not Used</td>
+        <td><input #e3_quarter_4_7_name (keyup)="0"></td>
+        <td><input #e3_quarter_4_7_teacher (keyup)="0"></td>
+        <td><input #e3_quarter_4_7_room (keyup)="0"></td>
+        <td>7(MW-F)</td>
+      </tr>
+      <tr>
+        <td>19-20</td>
+        <td>Not Used</td>
+        <td><input #e3_core3_name (keyup)="0"></td>
+        <td><input #e3_core3_teacher (keyup)="0"></td>
+        <td><input #e3_core3_room (keyup)="0"></td>
+        <td>Student to find out first week</td>
+      </tr>
+      <tr>
+        <td>19-20</td>
+        <td>Not Used</td>
+        <td><input #e3_core4_name (keyup)="0"></td>
+        <td><input #e3_core4_teacher (keyup)="0"></td>
+        <td><input #e3_core4_room (keyup)="0"></td>
+        <td>Student to find out first week</td>
+      </tr>
+    </tbody>  
+  </table>
+
+  <hr>
+
+  <table class="schedule" id="first-quarter">
+    <caption>First Quarter</caption>
+    <thead>
+      <tr>
+        <th>Course Name</th>
+        <th>Teacher</th>
+        <th>Room</th>
+        <th>Period</th>
+      <tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p>{{e3_core1_name.value}}</p></td>
+        <td><p>{{e3_core1_teacher.value}}</p></td>
+        <td><p>{{e3_core1_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e3_core2_name.value}}</p></td>
+        <td><p>{{e3_core2_teacher.value}}</p></td>
+        <td><p>{{e3_core2_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e3_quarter_1_3_name.value}}</p></td>
+        <td><p>{{e3_quarter_1_3_teacher.value}}</p></td>
+        <td><p>{{e3_quarter_1_3_room.value}}</p></td>
+        <td>Period 3</td>
+      </tr>
+      <tr>
+        <td><p>{{e3_core3_name.value}}</p></td>
+        <td><p>{{e3_core3_teacher.value}}</p></td>
+        <td><p>{{e3_core3_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e3_core4_name.value}}</p></td>
+        <td><p>{{e3_core4_teacher.value}}</p></td>
+        <td><p>{{e3_core4_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr [hidden]="!s1">
+        <td><p>{{e3_semester_1_name.value}}</p></td>
+        <td><p>{{e3_semester_1_teacher.value}}</p></td>
+        <td><p>{{e3_semester_1_room.value}}</p></td>
+        <td>Period 6</td>
+      </tr>
+      <tr [hidden]="s1">
+        <td><p>{{e3_quarter_1_6_name.value}}</p></td>
+        <td><p>{{e3_quarter_1_6_teacher.value}}</p></td>
+        <td><p>{{e3_quarter_1_6_room.value}}</p></td>
+        <td>Period 6</td>
+      </tr>
+      <tr>
+        <td><p>{{e3_quarter_1_7_name.value}}</p></td>
+        <td><p>{{e3_quarter_1_7_teacher.value}}</p></td>
+        <td><p>{{e3_quarter_1_7_room.value}}</p></td>
+        <td>Period 7</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <table class="schedule" id="second-quarter">
+    <caption>Second Quarter</caption>
+    <thead>
+      <tr>
+        <th>Course Name</th>
+        <th>Teacher</th>
+        <th>Room</th>
+        <th>Period</th>
+      <tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p>{{e3_core1_name.value}}</p></td>
+        <td><p>{{e3_core1_teacher.value}}</p></td>
+        <td><p>{{e3_core1_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e3_core2_name.value}}</p></td>
+        <td><p>{{e3_core2_teacher.value}}</p></td>
+        <td><p>{{e3_core2_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e3_quarter_2_3_name.value}}</p></td>
+        <td><p>{{e3_quarter_2_3_teacher.value}}</p></td>
+        <td><p>{{e3_quarter_2_3_room.value}}</p></td>
+        <td>Period 3</td>
+      </tr>
+      <tr>
+        <td><p>{{e3_core3_name.value}}</p></td>
+        <td><p>{{e3_core3_teacher.value}}</p></td>
+        <td><p>{{e3_core3_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e3_core4_name.value}}</p></td>
+        <td><p>{{e3_core4_teacher.value}}</p></td>
+        <td><p>{{e3_core4_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr [hidden]="!s1">
+        <td><p>{{e3_semester_1_name.value}}</p></td>
+        <td><p>{{e3_semester_1_teacher.value}}</p></td>
+        <td><p>{{e3_semester_1_room.value}}</p></td>
+        <td>Period 6</td>
+      </tr>
+      <tr [hidden]="s1">
+        <td><p>{{e3_quarter_2_6_name.value}}</p></td>
+        <td><p>{{e3_quarter_2_6_teacher.value}}</p></td>
+        <td><p>{{e3_quarter_2_6_room.value}}</p></td>
+        <td>Period 6</td>
+      </tr>
+      <tr>
+        <td><p>{{e3_quarter_2_7_name.value}}</p></td>
+        <td><p>{{e3_quarter_2_7_teacher.value}}</p></td>
+        <td><p>{{e3_quarter_2_7_room.value}}</p></td>
+        <td>Period 7</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <table class="schedule" id="third-quarter">
+    <caption>Third Quarter</caption>
+    <thead>
+      <tr>
+        <th>Course Name</th>
+        <th>Teacher</th>
+        <th>Room</th>
+        <th>Period</th>
+      <tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p>{{e3_core1_name.value}}</p></td>
+        <td><p>{{e3_core1_teacher.value}}</p></td>
+        <td><p>{{e3_core1_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e3_core2_name.value}}</p></td>
+        <td><p>{{e3_core2_teacher.value}}</p></td>
+        <td><p>{{e3_core2_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e3_quarter_3_3_name.value}}</p></td>
+        <td><p>{{e3_quarter_3_3_teacher.value}}</p></td>
+        <td><p>{{e3_quarter_3_3_room.value}}</p></td>
+        <td>Period 3</td>
+      </tr>
+      <tr>
+        <td><p>{{e3_core3_name.value}}</p></td>
+        <td><p>{{e3_core3_teacher.value}}</p></td>
+        <td><p>{{e3_core3_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e3_core4_name.value}}</p></td>
+        <td><p>{{e3_core4_teacher.value}}</p></td>
+        <td><p>{{e3_core4_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e3_quarter_3_6_name.value}}</p></td>
+        <td><p>{{e3_quarter_3_6_teacher.value}}</p></td>
+        <td><p>{{e3_quarter_3_6_room.value}}</p></td>
+        <td>Period 6</td>
+      </tr>
+      <tr [hidden]="!s2">
+        <td><p>{{e3_semester_2_name.value}}</p></td>
+        <td><p>{{e3_semester_2_teacher.value}}</p></td>
+        <td><p>{{e3_semester_2_room.value}}</p></td>
+        <td>Period 7</td>
+      </tr>
+       <tr [hidden]="s2">
+        <td><p>{{e3_quarter_3_7_name.value}}</p></td>
+        <td><p>{{e3_quarter_3_7_teacher.value}}</p></td>
+        <td><p>{{e3_quarter_3_7_room.value}}</p></td>
+        <td>Period 7</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <table class="schedule" id="fourth-quarter">
+    <caption>Fourth Quarter</caption>
+    <thead>
+      <tr>
+        <th>Course Name</th>
+        <th>Teacher</th>
+        <th>Room</th>
+        <th>Period</th>
+      <tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p>{{e3_core1_name.value}}</p></td>
+        <td><p>{{e3_core1_teacher.value}}</p></td>
+        <td><p>{{e3_core1_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e3_core2_name.value}}</p></td>
+        <td><p>{{e3_core2_teacher.value}}</p></td>
+        <td><p>{{e3_core2_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e3_quarter_4_3_name.value}}</p></td>
+        <td><p>{{e3_quarter_4_3_teacher.value}}</p></td>
+        <td><p>{{e3_quarter_4_3_room.value}}</p></td>
+        <td>Period 3</td>
+      </tr>
+      <tr>
+        <td><p>{{e3_core3_name.value}}</p></td>
+        <td><p>{{e3_core3_teacher.value}}</p></td>
+        <td><p>{{e3_core3_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e3_core4_name.value}}</p></td>
+        <td><p>{{e3_core4_teacher.value}}</p></td>
+        <td><p>{{e3_core4_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e3_quarter_4_6_name.value}}</p></td>
+        <td><p>{{e3_quarter_4_6_teacher.value}}</p></td>
+        <td><p>{{e3_quarter_4_6_room.value}}</p></td>
+        <td>Period 6</td>
+      </tr>
+      <tr [hidden]="!s2">
+        <td><p>{{e3_semester_2_name.value}}</p></td>
+        <td><p>{{e3_semester_2_teacher.value}}</p></td>
+        <td><p>{{e3_semester_2_room.value}}</p></td>
+        <td>Period 7</td>
+      </tr>
+       <tr [hidden]="s2">
+        <td><p>{{e3_quarter_4_7_name.value}}</p></td>
+        <td><p>{{e3_quarter_4_7_teacher.value}}</p></td>
+        <td><p>{{e3_quarter_4_7_room.value}}</p></td>
+        <td>Period 7</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div [hidden]="period != 1">
+  <table id="data">
+    <thead>
+      <tr>
+        <th>Term</th>
+        <th>Course #</th>
+        <th>Course Name</th>
+        <th>Teacher</th>
+        <th>Room</th>
+        <th>Period</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Q1</td>
+        <td>Not Used</td>
+        <td><input #e1_quarter_1_1_name (keyup)="0"></td>
+        <td><input #e1_quarter_1_1_teacher (keyup)="0"></td>
+        <td><input #e1_quarter_1_1_room (keyup)="0"></td>
+        <td>1(MW-F)</td>
+      </tr>
+      <tr>
+        <td>Q2</td>
+        <td>Not Used</td>
+        <td><input #e1_quarter_2_1_name (keyup)="0"></td>
+        <td><input #e1_quarter_2_1_teacher (keyup)="0"></td>
+        <td><input #e1_quarter_2_1_room (keyup)="0"></td>
+        <td>1(MW-F)</td>
+      </tr>
+      <tr>
+        <td>Q3</td>
+        <td>Not Used</td>
+        <td><input #e1_quarter_3_1_name (keyup)="0"></td>
+        <td><input #e1_quarter_3_1_teacher (keyup)="0"></td>
+        <td><input #e1_quarter_3_1_room (keyup)="0"></td>
+        <td>1(MW-F)</td>
+      </tr>
+      <tr>
+        <td>Q4</td>
+        <td>Not Used</td>
+        <td><input #e1_quarter_4_1_name (keyup)="0"></td>
+        <td><input #e1_quarter_4_1_teacher (keyup)="0"></td>
+        <td><input #e1_quarter_4_1_room (keyup)="0"></td>
+        <td>1(MW-F)</td>
+      </tr>
+      <tr>
+        <td>19-20</td>
+        <td>Not Used</td>
+        <td><input #e1_core1_name (keyup)="0"></td>
+        <td><input #e1_core1_teacher (keyup)="0"></td>
+        <td><input #e1_core1_room (keyup)="0"></td>
+        <td>Student to find out first week</td>
+      </tr>
+      <tr>
+        <td>19-20</td>
+        <td>Not Used</td>
+        <td><input #e1_core2_name (keyup)="0"></td>
+        <td><input #e1_core2_teacher (keyup)="0"></td>
+        <td><input #e1_core2_room (keyup)="0"></td>
+        <td>Student to find out first week</td>
+      </tr>
+      <tr [hidden]="!s1">
+        <td>S1</td>
+        <td>Not Used</td>
+        <td><input #e1_semester_1_name (keyup)="0"></td>
+        <td><input #e1_semester_1_teacher (keyup)="0"></td>
+        <td><input #e1_semester_1_room (keyup)="0"></td>
+        <td>6(MW-F)</td>
+      </tr>
+      <tr [hidden]="s1">
+        <td>Q1</td>
+        <td>Not Used</td>
+        <td><input #e1_quarter_1_6_name (keyup)="0"></td>
+        <td><input #e1_quarter_1_6_teacher (keyup)="0"></td>
+        <td><input #e1_quarter_1_6_room (keyup)="0"></td>
+        <td>6(MW-F)</td>
+      </tr>
+      <tr [hidden]="s1">
+        <td>Q2</td>
+        <td>Not Used</td>
+        <td><input #e1_quarter_2_6_name (keyup)="0"></td>
+        <td><input #e1_quarter_2_6_teacher (keyup)="0"></td>
+        <td><input #e1_quarter_2_6_room (keyup)="0"></td>
+        <td>6(MW-F)</td>
+      </tr>
+       <tr>
+        <td>Q3</td>
+        <td>Not Used</td>
+        <td><input #e1_quarter_3_6_name (keyup)="0"></td>
+        <td><input #e1_quarter_3_6_teacher (keyup)="0"></td>
+        <td><input #e1_quarter_3_6_room (keyup)="0"></td>
+        <td>6(MW-F)</td>
+      </tr>
+      <tr>
+        <td>Q4</td>
+        <td>Not Used</td>
+        <td><input #e1_quarter_4_6_name (keyup)="0"></td>
+        <td><input #e1_quarter_4_6_teacher (keyup)="0"></td>
+        <td><input #e1_quarter_4_6_room (keyup)="0"></td>
+        <td>6(MW-F)</td>
+      </tr>
+      <tr>
+        <td>Q1</td>
+        <td>Not Used</td>
+        <td><input #e1_quarter_1_7_name (keyup)="0"></td>
+        <td><input #e1_quarter_1_7_teacher (keyup)="0"></td>
+        <td><input #e1_quarter_1_7_room (keyup)="0"></td>
+        <td>7(MW-F)</td>
+      </tr>
+      <tr>
+        <td>Q2</td>
+        <td>Not Used</td>
+        <td><input #e1_quarter_2_7_name (keyup)="0"></td>
+        <td><input #e1_quarter_2_7_teacher (keyup)="0"></td>
+        <td><input #e1_quarter_2_7_room (keyup)="0"></td>
+        <td>7(MW-F)</td>
+      </tr>
+      <tr [hidden]="!s2">
+        <td>S2</td>
+        <td>Not Used</td>
+        <td><input #e1_semester_2_name (keyup)="0"></td>
+        <td><input #e1_semester_2_teacher (keyup)="0"></td>
+        <td><input #e1_semester_2_room (keyup)="0"></td>
+        <td>7(MW-F)</td>
+      </tr>
+      <tr [hidden]="s2">
+        <td>Q3</td>
+        <td>Not Used</td>
+        <td><input #e1_quarter_3_7_name (keyup)="0"></td>
+        <td><input #e1_quarter_3_7_teacher (keyup)="0"></td>
+        <td><input #e1_quarter_3_7_room (keyup)="0"></td>
+        <td>7(MW-F)</td>
+      </tr>
+      <tr [hidden]="s2">
+        <td>Q4</td>
+        <td>Not Used</td>
+        <td><input #e1_quarter_4_7_name (keyup)="0"></td>
+        <td><input #e1_quarter_4_7_teacher (keyup)="0"></td>
+        <td><input #e1_quarter_4_7_room (keyup)="0"></td>
+        <td>7(MW-F)</td>
+      </tr>
+      <tr>
+        <td>19-20</td>
+        <td>Not Used</td>
+        <td><input #e1_core3_name (keyup)="0"></td>
+        <td><input #e1_core3_teacher (keyup)="0"></td>
+        <td><input #e1_core3_room (keyup)="0"></td>
+        <td>Student to find out first week</td>
+      </tr>
+      <tr>
+        <td>19-20</td>
+        <td>Not Used</td>
+        <td><input #e1_core4_name (keyup)="0"></td>
+        <td><input #e1_core4_teacher (keyup)="0"></td>
+        <td><input #e1_core4_room (keyup)="0"></td>
+        <td>Student to find out first week</td>
+      </tr>
+    </tbody>  
+  </table>
+
+  <hr>
+
+  <table class="schedule" id="first-quarter">
+    <caption>First Quarter</caption>
+    <thead>
+      <tr>
+        <th>Course Name</th>
+        <th>Teacher</th>
+        <th>Room</th>
+        <th>Period</th>
+      <tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p>{{e1_quarter_1_1_name.value}}</p></td>
+        <td><p>{{e1_quarter_1_1_teacher.value}}</p></td>
+        <td><p>{{e1_quarter_1_1_room.value}}</p></td>
+        <td>Period 1</td>
+      </tr>
+      <tr>
+        <td><p>{{e1_core1_name.value}}</p></td>
+        <td><p>{{e1_core1_teacher.value}}</p></td>
+        <td><p>{{e1_core1_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e1_core2_name.value}}</p></td>
+        <td><p>{{e1_core2_teacher.value}}</p></td>
+        <td><p>{{e1_core2_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e1_core3_name.value}}</p></td>
+        <td><p>{{e1_core3_teacher.value}}</p></td>
+        <td><p>{{e1_core3_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e1_core4_name.value}}</p></td>
+        <td><p>{{e1_core4_teacher.value}}</p></td>
+        <td><p>{{e1_core4_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr [hidden]="!s1">
+        <td><p>{{e1_semester_1_name.value}}</p></td>
+        <td><p>{{e1_semester_1_teacher.value}}</p></td>
+        <td><p>{{e1_semester_1_room.value}}</p></td>
+        <td>Period 6</td>
+      </tr>
+      <tr [hidden]="s1">
+        <td><p>{{e1_quarter_1_6_name.value}}</p></td>
+        <td><p>{{e1_quarter_1_6_teacher.value}}</p></td>
+        <td><p>{{e1_quarter_1_6_room.value}}</p></td>
+        <td>Period 6</td>
+      </tr>
+      <tr>
+        <td><p>{{e1_quarter_1_7_name.value}}</p></td>
+        <td><p>{{e1_quarter_1_7_teacher.value}}</p></td>
+        <td><p>{{e1_quarter_1_7_room.value}}</p></td>
+        <td>Period 7</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <table class="schedule" id="second-quarter">
+    <caption>Second Quarter</caption>
+    <thead>
+      <tr>
+        <th>Course Name</th>
+        <th>Teacher</th>
+        <th>Room</th>
+        <th>Period</th>
+      <tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p>{{e1_quarter_2_1_name.value}}</p></td>
+        <td><p>{{e1_quarter_2_1_teacher.value}}</p></td>
+        <td><p>{{e1_quarter_2_1_room.value}}</p></td>
+        <td>Period 1</td>
+      </tr>
+      <tr>
+        <td><p>{{e1_core1_name.value}}</p></td>
+        <td><p>{{e1_core1_teacher.value}}</p></td>
+        <td><p>{{e1_core1_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e1_core2_name.value}}</p></td>
+        <td><p>{{e1_core2_teacher.value}}</p></td>
+        <td><p>{{e1_core2_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e1_core3_name.value}}</p></td>
+        <td><p>{{e1_core3_teacher.value}}</p></td>
+        <td><p>{{e1_core3_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e1_core4_name.value}}</p></td>
+        <td><p>{{e1_core4_teacher.value}}</p></td>
+        <td><p>{{e1_core4_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr [hidden]="!s1">
+        <td><p>{{e1_semester_1_name.value}}</p></td>
+        <td><p>{{e1_semester_1_teacher.value}}</p></td>
+        <td><p>{{e1_semester_1_room.value}}</p></td>
+        <td>Period 6</td>
+      </tr>
+      <tr [hidden]="s1">
+        <td><p>{{e1_quarter_2_6_name.value}}</p></td>
+        <td><p>{{e1_quarter_2_6_teacher.value}}</p></td>
+        <td><p>{{e1_quarter_2_6_room.value}}</p></td>
+        <td>Period 6</td>
+      </tr>
+      <tr>
+        <td><p>{{e1_quarter_2_7_name.value}}</p></td>
+        <td><p>{{e1_quarter_2_7_teacher.value}}</p></td>
+        <td><p>{{e1_quarter_2_7_room.value}}</p></td>
+        <td>Period 7</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <table class="schedule" id="third-quarter">
+    <caption>Third Quarter</caption>
+    <thead>
+      <tr>
+        <th>Course Name</th>
+        <th>Teacher</th>
+        <th>Room</th>
+        <th>Period</th>
+      <tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p>{{e1_quarter_3_1_name.value}}</p></td>
+        <td><p>{{e1_quarter_3_1_teacher.value}}</p></td>
+        <td><p>{{e1_quarter_3_1_room.value}}</p></td>
+        <td>Period 1</td>
+      </tr>
+      <tr>
+        <td><p>{{e1_core1_name.value}}</p></td>
+        <td><p>{{e1_core1_teacher.value}}</p></td>
+        <td><p>{{e1_core1_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e1_core2_name.value}}</p></td>
+        <td><p>{{e1_core2_teacher.value}}</p></td>
+        <td><p>{{e1_core2_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e1_core3_name.value}}</p></td>
+        <td><p>{{e1_core3_teacher.value}}</p></td>
+        <td><p>{{e1_core3_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e1_core4_name.value}}</p></td>
+        <td><p>{{e1_core4_teacher.value}}</p></td>
+        <td><p>{{e1_core4_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e1_quarter_3_6_name.value}}</p></td>
+        <td><p>{{e1_quarter_3_6_teacher.value}}</p></td>
+        <td><p>{{e1_quarter_3_6_room.value}}</p></td>
+        <td>Period 6</td>
+      </tr>
+      <tr [hidden]="!s2">
+        <td><p>{{e1_semester_2_name.value}}</p></td>
+        <td><p>{{e1_semester_2_teacher.value}}</p></td>
+        <td><p>{{e1_semester_2_room.value}}</p></td>
+        <td>Period 7</td>
+      </tr>
+       <tr [hidden]="s2">
+        <td><p>{{e1_quarter_3_7_name.value}}</p></td>
+        <td><p>{{e1_quarter_3_7_teacher.value}}</p></td>
+        <td><p>{{e1_quarter_3_7_room.value}}</p></td>
+        <td>Period 7</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <table class="schedule" id="fourth-quarter">
+    <caption>Fourth Quarter</caption>
+    <thead>
+      <tr>
+        <th>Course Name</th>
+        <th>Teacher</th>
+        <th>Room</th>
+        <th>Period</th>
+      <tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><p>{{e1_quarter_4_1_name.value}}</p></td>
+        <td><p>{{e1_quarter_4_1_teacher.value}}</p></td>
+        <td><p>{{e1_quarter_4_1_room.value}}</p></td>
+        <td>Period 1</td>
+      </tr>
+      <tr>
+        <td><p>{{e1_core1_name.value}}</p></td>
+        <td><p>{{e1_core1_teacher.value}}</p></td>
+        <td><p>{{e1_core1_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e1_core2_name.value}}</p></td>
+        <td><p>{{e1_core2_teacher.value}}</p></td>
+        <td><p>{{e1_core2_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e1_core3_name.value}}</p></td>
+        <td><p>{{e1_core3_teacher.value}}</p></td>
+        <td><p>{{e1_core3_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e1_core4_name.value}}</p></td>
+        <td><p>{{e1_core4_teacher.value}}</p></td>
+        <td><p>{{e1_core4_room.value}}</p></td>
+        <td>Student to find out first days of school</td>
+      </tr>
+      <tr>
+        <td><p>{{e1_quarter_4_6_name.value}}</p></td>
+        <td><p>{{e1_quarter_4_6_teacher.value}}</p></td>
+        <td><p>{{e1_quarter_4_6_room.value}}</p></td>
+        <td>Period 6</td>
+      </tr>
+      <tr [hidden]="!s2">
+        <td><p>{{e1_semester_2_name.value}}</p></td>
+        <td><p>{{e1_semester_2_teacher.value}}</p></td>
+        <td><p>{{e1_semester_2_room.value}}</p></td>
+        <td>Period 7</td>
+      </tr>
+       <tr [hidden]="s2">
+        <td><p>{{e1_quarter_4_7_name.value}}</p></td>
+        <td><p>{{e1_quarter_4_7_teacher.value}}</p></td>
+        <td><p>{{e1_quarter_4_7_room.value}}</p></td>
+        <td>Period 7</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
