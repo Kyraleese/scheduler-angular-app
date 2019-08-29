@@ -9,5 +9,5 @@ export class AppComponent {
   title = 'schedule-app';
   s1 = false;
   s2 = false;
-  period = "9";
+  period = '9';
 }

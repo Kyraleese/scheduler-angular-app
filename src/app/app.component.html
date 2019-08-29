@@ -14,7 +14,7 @@
 <p> My child has Band/Orchestra for S1: <input type="checkbox" [(ngModel)]="s1" /> </p>
 <p> My child has Band/Orchestra for S2: <input type="checkbox" [(ngModel)]="s2" /> </p>
 
-<div [hidden]="period != 5">
+<div [hidden]="period != '5'">
   <table id="data">
     <thead>
       <tr>
@@ -431,7 +431,7 @@
   </table>
 </div>
 
-<div [hidden]="period != 3">
+<div [hidden]="period != '3'">
   <table id="data">
     <thead>
       <tr>
@@ -848,7 +848,7 @@
   </table>
 </div>
 
-<div [hidden]="period != 1">
+<div [hidden]="period != '1'">
   <table id="data">
     <thead>
       <tr>
