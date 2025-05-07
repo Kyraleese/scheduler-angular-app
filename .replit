@@ -21,12 +21,12 @@ mode = "sequential"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "npm install"
+args = "NODE_OPTIONS=--openssl-legacy-provider npm install"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "ng build"
+args = "NODE_OPTIONS=--openssl-legacy-provider ng build"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "node server.js"
+args = "NODE_OPTIONS=--openssl-legacy-provider node server.js"
