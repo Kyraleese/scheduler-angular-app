@@ -1,12 +1,15 @@
+
 const express = require('express');
 const path = require('path');
 
 const app = express();
 
-app.use(express.static('/home/runner/workspace/src'));
+app.use(express.static(path.join(__dirname, 'dist/schedule-app')));
 
-app.get('/*', function(req,res) {
-  res.sendFile(path.join('/home/runner/workspace/src/index.html'));
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname, 'dist/schedule-app/index.html'));
 });
 
-app.listen(process.env.PORT || 8080);
+app.listen(process.env.PORT || 8080, '0.0.0.0', () => {
+  console.log('Server running on port', process.env.PORT || 8080);
+});

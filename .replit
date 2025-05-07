@@ -10,3 +10,23 @@ run = ["sh", "-c", "npm run start"]
 [[ports]]
 localPort = 8080
 externalPort = 80
+
+[workflows]
+runButton = "Build and Run"
+
+[[workflows.workflow]]
+name = "Build and Run"
+author = 933637
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm install"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "ng build"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "node server.js"
